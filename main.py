@@ -23,7 +23,7 @@ def get_content(html):
         laptops.append({
             'Название': item.find('div', class_='listbox_title oh').get_text(),
             'Описание': str(item.find('div', class_='product_text pull-left').get_text()).split('\n')[-1],
-            'Фото' : item.find('img').get('src'),
+            'Фото' : 'https://www.kivano.kg' + item.find('img').get('src'),
             'Цена' : item.find('div', class_='listbox_price text-center').get_text(),
             'Подробнее' : 'https://www.kivano.kg' + item.find('div', class_='listbox_title oh').find('a').get('href'),
             'Наличие' : item.find('div', class_='listbox_motive text-center').get_text()
